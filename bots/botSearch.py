@@ -3,7 +3,7 @@ import wikipedia
 def bot_search():
     wikipedia.set_lang('en')
     term_search = input(f'\nWhat do you want to search for? ')
-
+    
     wiki_search = wikipedia.search(term_search, results=8)
     print(f'\n Related search: {wiki_search}\n')
 
