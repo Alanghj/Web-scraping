@@ -10,16 +10,12 @@ def bot_speaker():
             with open('article/subject.txt', 'r', encoding="utf-8") as f:
                 read_file = f.readlines()
             try:
-                # Start the project
+                # Audio settings
                 engine = pyttsx3.init()
-
-                # Control the velocity
                 engine.setProperty("rate", 180)
-
-                # Change the voice
+                # Control the voices [0 to 2]
                 voices = engine.getProperty("voices")
                 engine.setProperty("voice", voices[2].id)
-
                 # start the audio
                 engine.say(read_file)
                 engine.runAndWait()
