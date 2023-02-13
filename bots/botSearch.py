@@ -1,5 +1,7 @@
 import wikipedia
 
+
+
 def bot_search():
     wikipedia.set_lang('en')
     term_search = input(f'\nWhat do you want to search for? ')
@@ -18,10 +20,13 @@ def bot_search():
         with open('article/subject.txt', 'w', encoding="utf-8") as f:
             for article in wiki_article:
                 f.writelines(article)
-    else:
-        wiki_content = wikipedia.summary(term_search, sentences=10)
-        print(f'\n{wiki_content}\n')
 
-        with open('article/subject.txt', 'w', encoding="utf-8") as f:
-            for content in wiki_content:
-                f.writelines(content)
+        return True
+
+
+    wiki_content = wikipedia.summary(term_search, sentences=10)
+    print(f'\n{wiki_content}\n')
+
+    with open('article/subject.txt', 'w', encoding="utf-8") as f:
+        for content in wiki_content:
+            f.writelines(content)
